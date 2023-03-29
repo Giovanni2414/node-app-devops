@@ -5,9 +5,9 @@ LABEL "Project description"="Node app"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN mkdir -p /tmp/node-app && cd /tmp/node-app
+WORKDIR /node-app-devops
 
-COPY ./ /tmp/node-app
+COPY ./ ./node-app-devops
 
 RUN npm install
 
