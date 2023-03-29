@@ -7,9 +7,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /node-app-devops
 
-COPY ./ ./node-app-devops
+COPY ./package.json ./node-app-devops
 
 RUN npm install
+
+COPY ./ ./node-app-devops
 
 CMD ["npm","run","start"]
 
