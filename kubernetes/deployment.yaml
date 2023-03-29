@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: xgiovanni/node-app-devops
+          image: xgiovanni/node-app-devops:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
