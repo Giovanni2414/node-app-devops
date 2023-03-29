@@ -1,0 +1,2 @@
+prefix   = "Danna"
+location = "eastus"
