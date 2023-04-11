@@ -1,36 +1,21 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: node-app
+    name: node-app
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: node-app
-  template:
-    metadata:
-      labels:
-        app: node-app
-    spec:
-      containers:
-        - name: node-app
-          image: xgiovanni/node-app-devops:latest
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 80
-      restartPolicy: Always
-
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: node-app
-spec:
-  type: NodePort
-  ports:
-    - port: 80
-      targetPort: 80
-      protocol: TCP
-      nodePort: 31000
-  selector:
-    app: node-app
+    replicas: 2
+    selector:
+        matchLabels:
+            app: node-app
+    template:
+        metadata:
+            labels:
+                app: node-app
+        spec:
+            containers:
+                - name: node-app
+                  image: xgiovanni/node-app-devops:latest
+                  imagePullPolicy: Always
+                  ports:
+                      - containerPort: 3000
+            restartPolicy: Always
