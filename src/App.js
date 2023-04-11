@@ -15,14 +15,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="title">Rick & Morty</h1>
+        <p>Ve lo ve profe, uno de Sistemas se hizo un CI/CD ¿Ahí qué?</p>
         {characters ? (
-          <Character characters={characters} setCharacters={setCharacters}/>
+          <Character characters={characters} setCharacters={setCharacters} />
         ) : (
           <>
             <img src={imageRickMorty} alt="Rick & Morty" className="img-home"></img>
             <button onClick={reqApi} className="btn-search">Buscar Personajes</button>
           </>
-        ) }
+        )}
       </header>
     </div>
   );
