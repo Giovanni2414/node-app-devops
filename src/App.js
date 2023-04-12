@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="title">Rick & Morty</h1>
-        <p>Ve lo ve profe, uno de Sistemas se hizo un CI/CD ¿Ahí qué? .</p>
+        <p>Si funciona pille</p>
         {characters ? (
           <Character characters={characters} setCharacters={setCharacters} />
         ) : (
