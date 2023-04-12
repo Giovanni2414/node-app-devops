@@ -18,12 +18,12 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: xgiovanni/node-app-devops:latest, xgiovanni/node-app-devops:${{ github.sha }}
+          tags: xgiovanni/node-app-devops:${{ github.sha }}
       - name: deploy to cluster
         uses: steebchen/kubectl@v2.0.0
         with:
           config: ${{ secrets.KUBE_CONFIG_DATA }}
-          command: set image --record deployment/node-app node-app=xgiovanni/node-app-devops:latest
+          command: set image --record deployment/node-app node-app=xgiovanni/node-app-devops:${{ github.sha }}
       - name: Get pods
         uses: steebchen/kubectl@v2.0.0
         with:
